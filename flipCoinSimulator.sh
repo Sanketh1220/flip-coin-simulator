@@ -29,3 +29,15 @@ done
 echo "Heads wins "$heads" times."
 echo "Tails wins "$tails" times."
 
+if [ $heads -ge 21 -a  $tails -ge 21 ]
+then
+	echo "Tie as both won 21 times."
+elif (( $heads >= 21 ))
+then
+	res=$(( $heads - $tails ))
+	echo "Heads wins 21 times and defeated tails by "$res" times."
+elif (( $tails >= 21 ))
+then
+	res=$(( $tails - $heads ))
+	echo "Tails wins 21 times and defeated heads by "$res" times."
+fi
