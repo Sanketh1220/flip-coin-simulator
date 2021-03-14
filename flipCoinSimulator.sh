@@ -32,6 +32,20 @@ echo "Tails wins "$tails" times."
 if [ $heads -ge 21 -a  $tails -ge 21 ]
 then
 	echo "Tie as both won 21 times."
+	while [ $heads -lt $(($tails+2)) -a $tails -lt $(($heads+2))$
+   	do
+      	 ran=$((RANDOM % 2 + 1))
+
+         case $ran in
+          1) ((heads++)) ;;
+
+          2) ((tails++)) ;;
+
+          *) echo "No one won" ;;
+        esac
+       done
+   echo "Heads wins "$heads" times."
+   echo "Tails wins "$tails" times."
 elif (( $heads >= 21 ))
 then
 	res=$(( $heads - $tails ))
